@@ -22,3 +22,14 @@ btnPopup.addEventListener('click', ()=>{
 iconClose.addEventListener('click', ()=>{
     wrapper.classList.remove('active-popup');
 }); 
+
+function func(){
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    if(email == 'gautam.arora468@gmail.com' && password == 'abcd'){
+        window.location.assign("../dash/dashboard.html");
+    }
+    else{
+        alert("either email or password is wrong");
+    }
+}
