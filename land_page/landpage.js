@@ -9,7 +9,7 @@ let text = document.getElementById('text');
         })
 
 var typed = new Typed(".auto-type", {
-    strings: ["Live Scores", "Sport News", "All Sports, All the Time"],
+    strings: ["Organize life", "Track Your Finance", "One Place for Your College Life"],
     typeSpeed: 160, 
     backSpeed: 180,
     loop:true
@@ -38,3 +38,8 @@ animateElement('.team-member2', 'left', '700', '500px', true);
 animateElement('.team-member3', 'left', '1050', '500px', true);
 animateElement('.team-member4', 'left', '300', '500px', true);
 animateElement('.team-member5', 'left', '700', '500px', true);
+
+function redirectToLogin() {
+    // Redirect the user to login.html
+    window.location.href = 'login.html';
+}

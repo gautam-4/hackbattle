@@ -1,67 +1,84 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700,800,900&display=swap');
-*
-{
+@import url();
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
 }
 
 body
 {
     min-height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(#57a77c, #57a77c);
+    background: linear-gradient(#ba79f7, #ba79f7);
+    background: rgba(0, 0, 0, 0.5);
 }
 
-header
-{
-    position: absolute;
+header{
+    position:absolute;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 30px 100px;
+    padding: 20px 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1000;                  /*brings header in front of images added*/
+    z-index: 99;
 }
 
-header .logo
-{
-    color: #fff;
-    font-weight: 700;
+.logo {
+    font-size: 2em;
+    color: #ffffff;
+    user-select: none;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: #000000;
     text-decoration: none;
-    font-size: 1.7em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: 500;
+    margin-left: 40px; 
 }
 
-header ul
-{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header ul li
-{
-    list-style: none;
-    margin-left: 20px;
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #000000;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
 }
 
-header ul li a
-{
-    text-decoration: none;
-    padding: 6px 15px;                  /*the area in which clicking on it will work*/
-    color: #fff;
-    border-radius: 20px;                /*rounds the corner*/
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
 }
-header ul li a:hover,                    /*when you hover over home, about they turn to white while text turns color of background*/
-header ul li a.active                               /*in html file home has active so here it wiil stay active*/
-{
-    background: #fff;
-    color: #2b1055;        
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #000000;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #000000;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background: #000000;
+    color: #ffffff;
 }
 
 /*images*/
@@ -83,7 +100,7 @@ section::before
     bottom: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(to top, #57a77c, transparent);
+    background: linear-gradient(to top, #ba79f7, transparent);
     z-index: 1000;
 }
 section img
@@ -97,24 +114,11 @@ section img
     pointer-events: non e;
 }
 
-
-/*
-section img#moon
-{
-   mix-blend-mode: screen; 
-   max-width: 200px;
-}
-section img#stands
-{
-    z-index: 10;  
-}
-*/
-
 #text
 {
     position: absolute;
     
-    color: #fff;
+    color: #ffffff;
     white-space: nowrap;
     font-size: 7.5vw;
     font-weight: 575;
@@ -124,7 +128,7 @@ section img#stands
 #auto
 {
     position: absolute;
-    color: #c2cf14;
+    color: #ffffff;
     white-space: nowrap;
     font-size: 3vw;
     z-index: 9;
@@ -133,7 +137,7 @@ section img#stands
 .sec {
     position: relative;
     padding: 100px;
-    background: #57a77c;
+    background: #ba79f7;
 }
 
 .sec h2 {
@@ -169,4 +173,9 @@ section img#stands
     max-width: 100%; /* Ensure the image doesn't exceed its container */
     height: auto; /* Maintain the image's aspect ratio */
     /*mix-blend-mode: screen; */
+}
+
+/* Add this CSS rule to change the background color */
+.custom-background {
+    background-color: #ba79f7;
 }
