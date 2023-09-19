@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(#57a77c, #57a77c);
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;                  /*brings header in front of images added*/
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    text-decoration: none;
+    padding: 6px 15px;                  /*the area in which clicking on it will work*/
+    color: #fff;
+    border-radius: 20px;                /*rounds the corner*/
+}
+header ul li a:hover,                    /*when you hover over home, about they turn to white while text turns color of background*/
+header ul li a.active                               /*in html file home has active so here it wiil stay active*/
+{
+    background: #fff;
+    color: #2b1055;        
+}
+
+/*images*/
+section
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section::before     
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, #57a77c, transparent);
+    z-index: 1000;
+}
+section img
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: non e;
+}
+
+
+/*
+section img#moon
+{
+   mix-blend-mode: screen; 
+   max-width: 200px;
+}
+section img#stands
+{
+    z-index: 10;  
+}
+*/
+
+#text
+{
+    position: absolute;
+    
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    font-weight: 575;
+    z-index: 9;
+    transform: translateY(-20px);
+}
+#auto
+{
+    position: absolute;
+    color: #c2cf14;
+    white-space: nowrap;
+    font-size: 3vw;
+    z-index: 9;
+    transform: translateY(69px);
+}
+.sec {
+    position: relative;
+    padding: 100px;
+    background: #57a77c;
+}
+
+.sec h2 {
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #000000;
+    text-align: center;
+}
+
+.sec p {
+    font-size: 1.2em;
+    color: #000000;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; /* Arrange content in a row */
+    align-items: center; /* Center vertically within the container */
+}
+
+.text-container {
+    flex: 3; /* Make the text content flex to fill 75% of the available space */
+    padding-right: 20px; /* Add spacing between text and image */
+}
+
+.about-image {
+    flex: 1; /* Make the image container flex to fill 25% of the available space */
+    text-align: right; /* Align the image to the right */ 
+}
+
+.about-image img {
+    max-width: 100%; /* Ensure the image doesn't exceed its container */
+    height: auto; /* Maintain the image's aspect ratio */
+    /*mix-blend-mode: screen; */
+}
