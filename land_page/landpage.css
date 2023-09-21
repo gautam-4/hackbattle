@@ -31,6 +31,7 @@ header{
     font-size: 2em;
     color: #ffffff;
     user-select: none;
+    transform: translateX(-120px);
 }
 
 .navigation a{

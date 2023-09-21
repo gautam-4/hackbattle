@@ -30,9 +30,11 @@ header{
 }
 
 .logo {
+    text-decoration: none;
     font-size: 2em;
     color: #fff;
     user-select: none;
+    transform: translateX(-120px);
 }
 
 

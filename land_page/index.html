@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=  device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <title>Landing Page</title>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
@@ -12,11 +11,13 @@
 </head>
 <body>
   <header>
-    <h2. class="logo">HelperHub</h2.>
+    <a href="index.html" class="logo">
+    <h2.>HelperHub</h2.>
+    </a>
     <nav class="navigation">
-        <a href="#top">Home</a>
-        <a href="#sec">About</a>
-        <a href="#team">Contact</a>
+        <a href="#top" class="scroll-link">Home</a>
+        <a href="#sec" class="scroll-link">About</a>
+        <a href="#team" class="scroll-link">Contact</a>
         <button class="btnLogin-popup" onclick="redirectToLogin()">Login</button>
     </nav>
   </header>
@@ -45,9 +46,9 @@
     
     <hr>
 
-    <section class="text-gray-600 body-font custom-background">
+    <section class="text-gray-600 body-font custom-background" id="team">
         <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-20" id = "team">
+          <div class="flex flex-col text-center w-full mb-20">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
           </div>
           <div class="flex flex-wrap -m-2">
@@ -86,7 +87,7 @@
                 <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
                   <!--<img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88">-->
                   <div class="flex-grow">
-                    <h2 class="text-gray-900 title-font font-medium">Lokesh Maheshwari</h2>
+                    <h2 class="text-gray-900 title-font font-medium">Lokesh Maheswari</h2>
                     <p class="text-gray-500">Founder</p>
                   </div>
                 </div>
@@ -108,10 +109,9 @@
     <footer class="text-gray-400 bg-gray-900 body-font">
         <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-            <img src="sportBackPicArt.jpg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
-            <span class="ml-3 text-xl">streets</span>
+            <span class="ml-3 text-xl">nottypadCoders</span>
           </a>
           <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2023 nottypadCoders —
             <a href="https://github.com/gautam-4" class="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@gautam-4</a>
@@ -144,5 +144,26 @@
     </footer>
 
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      // Smooth scrolling when clicking on navigation links
+      const scrollLinks = document.querySelectorAll('.scroll-link');
+      
+      scrollLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+              e.preventDefault(); // Prevent default link behavior
+              
+              const targetId = link.getAttribute('href').substring(1); // Get the target section's ID
+              const targetSection = document.getElementById(targetId); // Get the target section
+              
+              if (targetSection) {
+                  window.scrollTo({
+                      top: targetSection.offsetTop, // Scroll to the target section's top position
+                      behavior: 'smooth' // Add smooth scrolling behavior
+                  });
+              }
+          });
+      });
+  </script>
+  
 </body>
 </html>
